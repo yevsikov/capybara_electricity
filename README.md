@@ -12,8 +12,8 @@
              #page.driver.browser.manage.window.maximize
          end
          test 'should_get_to_the_oblenergo_site' do
-             future=2 
-             street = 'Парковая' #'Елисаветинская'
+             future = 1
+             street = 'Елисаветинская'
              date = Date.today+future 
              query = "?date=#{date}"
              screen_folder = 'test/integration/screens/'
