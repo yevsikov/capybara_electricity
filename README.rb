@@ -8,7 +8,7 @@
          setup do
              Capybara.current_driver = Capybara.javascript_driver
              Capybara.app_host = 'http://www.oblenergo.odessa.ua/index.php/ru/grafiki-otklyuchenij'
-              page.driver.browser.manage.delete_all_cookies
+             page.driver.browser.manage.delete_all_cookies
              #page.driver.browser.manage.window.maximize
          end
          test 'should_get_to_the_oblenergo_site' do
