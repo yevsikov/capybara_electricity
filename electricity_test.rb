@@ -14,13 +14,12 @@
          test 'should_get_to_the_oblenergo_site' do
              future = 1
              street = 'Елисаветинская'
-             date = Date.today+future 
-             query = "?date=#{date}"
+             date_to_search = Time.now+future*60*60*24
+             query = "?date=#{date_to_search.strftime('%Y-%m-%d')}"
              screen_folder = 'test/integration/screens/'
              screen_file = screen_folder + Time.now.strftime("%s")+'.png'
-             date_on_page=Time.now+future*60*60*24
              visit "/#{query}"
-             assert page.has_content? date_on_page.strftime("%d.%m.%Y")
+             assert page.has_content? date_to_search.strftime("%d.%m.%Y")
              if page.has_no_content? street   
                  puts "Without blackouts"  
              else
